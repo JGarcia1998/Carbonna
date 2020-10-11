@@ -34,10 +34,39 @@
 
     <main id="content" class="base-layout">
       <div class="filter-container">
-        <span class="item-details">Luxury</span>
-        <span class="item-details">Sport</span>
-        <span class="item-details">SUV</span>
-        <span class="item-details">All</span>
+        <input
+          type="radio"
+          name="Category"
+          data-value-category="all"
+          id="radio-all"
+          class="category-control"
+          checked
+        />
+        <label class="radio-control" for="radio-all">All</label><br />
+        <input
+          type="radio"
+          name="Category"
+          data-value-category="luxury"
+          id="radio-luxury"
+          class="category-control"
+        />
+        <label class="radio-control" for="radio-luxury">Luxury</label><br />
+        <input
+          type="radio"
+          name="Category"
+          data-value-category="sport"
+          id="radio-sport"
+          class="category-control"
+        />
+        <label class="radio-control" for="radio-sport">Sport</label><br />
+        <input
+          type="radio"
+          name="Category"
+          data-value-category="suv"
+          id="radio-suv"
+          class="category-control"
+        />
+        <label class="radio-control" for="radio-suv">SUV</label><br />
       </div>
 
       <div class="main-item-grid">
@@ -49,7 +78,7 @@
           <p value="2850" class="item-price">$2850</p>
           <button id="add-cart" class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="sport" class="grid-item">
           <h3 class="title">Jaguar</h3>
           <div class="img-container">
             <img class="car-image" src="img/jag.jpeg" alt="car" />
@@ -57,7 +86,7 @@
           <p value="2010" class="item-price">$2010</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">PNC</h3>
           <div class="img-container">
             <img class="car-image" src="img/pnc.jpg" alt="car" />
@@ -65,7 +94,7 @@
           <p value="2040" class="item-price">$2040</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">Benz SUV</h3>
           <div class="img-container">
             <img class="car-image" src="img/benz.png" alt="car" />
@@ -73,7 +102,7 @@
           <p value="1599" class="item-price">$1599</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">Benz Sedan</h3>
           <div class="img-container">
             <img class="car-image" src="img/jag1.jpg" alt="car" />
@@ -81,7 +110,7 @@
           <p value="3000" class="item-price">$3000</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="sport" class="grid-item">
           <h3 class="title">Jaguar</h3>
           <div class="img-container">
             <img class="car-image" src="img/jag.jpeg" alt="car" />
@@ -89,7 +118,7 @@
           <p value="1987" class="item-price">$1987</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">Audi</h3>
           <div class="img-container">
             <img class="car-image" src="img/audi.png" alt="car" />
@@ -97,7 +126,7 @@
           <p value="1408" class="item-price">$1408</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="suv" class="grid-item">
           <h3 class="title">SUV</h3>
           <div class="img-container">
             <img class="car-image" src="img/suv.jpg" alt="car" />
@@ -105,7 +134,7 @@
           <p value="2890" class="item-price">$2890</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="sport" class="grid-item">
           <h3 class="title">Bugatti</h3>
           <div class="img-container">
             <img class="car-image" src="img/bugatti.jpg" alt="car" />
@@ -113,7 +142,7 @@
           <p value="2570" class="item-price">$2570</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">Benz Sedan</h3>
           <div class="img-container">
             <img class="car-image" src="img/unnamed.jpg" alt="car" />
@@ -121,7 +150,7 @@
           <p value="1245" class="item-price">$1245</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="sport" class="grid-item">
           <h3 class="title">Ferarri</h3>
           <div class="img-container">
             <img class="car-image" src="img/rari.png" alt="car" />
@@ -129,7 +158,7 @@
           <p value="1975" class="item-price">$1975</p>
           <button class="add-btn"><p class="plus">+</p></button>
         </div>
-        <div class="grid-item">
+        <div cat="luxury" class="grid-item">
           <h3 class="title">BMW</h3>
           <div class="img-container">
             <img class="car-image" src="img/bmw.jpg" alt="car" />
@@ -150,6 +179,25 @@
         </div>
       </ul>
     </footer>
+
+    <div class="real-footer">
+      <h3 class="footer-header">Carbonna</h3>
+      <div class="real-footer-container">
+        <ul class="ul-list">
+          <li class="ul-list__items">Find your dream car</li>
+          <li class="ul-list__items">Other Vehicles</li>
+          <li class="ul-list__items">Locations</li>
+          <li class="ul-list__items">Work with us</li>
+          <li class="ul-list__items">About us</li>
+        </ul>
+        <p class="copyright">
+          Built by <a href="#" class="footer-link">Jared Garcia</a>
+          Copyright &copy;2020 by Jared Garcia
+        </p>
+      </div>
+    </div>
+
     <script src="js/app.js"></script>
+    <script src="js/filter.js"></script>
   </body>
 </html>
