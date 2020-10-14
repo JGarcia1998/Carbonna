@@ -14,15 +14,18 @@ function validate() {
   if (document.querySelector(".slide-footer").checked) {
     document.querySelector(".footer-container").style.bottom = -11.5 + "rem";
     document.querySelector(".checkbox-btn").style.bottom = 0;
-    document.querySelector(".main-order-container").style.bottom =
-      -11.5 + "rem";
+    document.querySelector(".order-container").style.transform =
+      "translateX(16rem)";
+
     setTimeout(() => {
       document.querySelector(".checkbox-btn").innerHTML = "Slide-up";
     }, 1000);
   } else if (!document.querySelector(".slide-footer").checked) {
     document.querySelector(".footer-container").style.bottom = 0;
     document.querySelector(".checkbox-btn").style.bottom = 11.5 + "rem";
-    document.querySelector(".main-order-container").style.bottom = 0;
+    document.querySelector(".order-container").style.transform =
+      "translateX(0)";
+
     setTimeout(() => {
       document.querySelector(".checkbox-btn").innerHTML = "Slide-down";
     }, 1000);
@@ -47,8 +50,9 @@ function addToCart() {
   parent.removeAttribute("style");
 
   document.querySelector(".footer-container").style.bottom = 0;
-  document.querySelector(".main-order-container").style.bottom = 0;
+
   document.querySelector(".footer-container").style.visibility = "visible";
+  document.querySelector(".order-container").style.transform = "translateX(0)";
 
   document.querySelector(".checkbox-btn").style.bottom = 11.5 + "rem";
   document.querySelector(".checkbox-btn").innerHTML = "Slide-down";
@@ -88,6 +92,7 @@ function updateCartsPrice() {
     document.querySelector(".footer-container").style.bottom = -12 + "rem";
     document.querySelector(".checkbox-btn").style.bottom = 0;
     document.querySelector(".checkbox-btn").innerHTML = "Slide-up";
-    document.querySelector(".main-order-container").style.bottom = -12 + "rem";
+    document.querySelector(".order-container").style.transform =
+      "translateX(16rem)";
   }
 }
