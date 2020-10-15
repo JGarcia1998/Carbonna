@@ -678,6 +678,15 @@ body {
   letter-spacing: 0.3rem;
 }
 
+.popular-h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: rgb(124, 145, 158);
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  text-align: center;
+}
+
 .apr {
   font-size: 3rem;
   margin-top: 3rem;
@@ -767,6 +776,54 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.popular-items {
+  margin-top: 8rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular-info {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+.popular-row-ct {
+  display: flex;
+  margin-top: 8rem;
+}
+
+.popular-car-ct {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30rem;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  margin: 0 3rem;
+  transition: 0.3s;
+}
+
+.popular-car-ct:hover {
+  transform: scale(1.1) translateY(-1rem);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+.popular-img {
+  width: 100%;
+  height: auto;
+  padding: 3rem;
+}
+
+.car-name {
+  background-color: #84ffbb;
+  padding: 1.2rem 1.5rem;
+  font-size: 2rem;
+}
+
 /* MEDIA QUERIES  */
 
 @media only screen and (max-width: 62.5em) {
