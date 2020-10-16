@@ -96,3 +96,19 @@ function updateCartsPrice() {
       "translateX(16rem)";
   }
 }
+
+[...document.querySelectorAll(".popular-position-btn")].forEach((item) => {
+  item.addEventListener("click", function () {
+    viewDetails();
+  });
+});
+
+function viewDetails() {
+  document.querySelector(".detail-container").style.display = "block";
+  document.querySelector(".detail-box").style.display = "block";
+}
+
+document.querySelector(".exit").addEventListener("click", function () {
+  document.querySelector(".detail-container").style.display = "none";
+  document.querySelector(".detail-box").style.display = "none";
+});

@@ -483,7 +483,6 @@ body {
   position: fixed;
   border-radius: 3px;
   bottom: 11.5rem;
-  z-index: -1;
   font-size: 1.5rem;
   color: #fff;
 
@@ -492,7 +491,7 @@ body {
   justify-content: center;
   left: 50%;
   transform: translate(-50%);
-  z-index: 5000;
+  z-index: 1300;
   visibility: hidden;
   opacity: 0;
   transition: 1s;
@@ -720,6 +719,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
   padding: 5rem 3rem;
+  overflow: hidden;
 }
 
 .client-header {
@@ -806,6 +806,7 @@ body {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
   margin: 0 3rem;
   transition: 0.3s;
+  position: relative;
 }
 
 .popular-car-ct:hover {
@@ -824,11 +825,186 @@ body {
   font-size: 2rem;
 }
 
+#view-details {
+  display: none;
+}
+
+.popular-position-btn {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background-color: rgb(137, 161, 177);
+  border: none;
+  color: #fff;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+@keyframes slide-from-left {
+  0% {
+    left: -110%;
+  }
+
+  100% {
+    left: 0;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.detail-container {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  animation: slide-from-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.detail-box {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  width: 75vw;
+  height: 75vh;
+  background-color: #fff;
+  overflow: hidden;
+  background-image: url(../img/background-image.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 6000;
+  animation: fade-in;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.exit {
+  right: 1.5rem;
+  top: 1.5rem;
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(87, 87, 87);
+  transition: 0.2s;
+}
+
+.exit:hover {
+  color: #28b485;
+}
+
+.left-detail {
+  background-color: rgb(255, 255, 255, 0.9);
+  width: 50%;
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+  height: 100%;
+  padding: 4rem 3rem;
+}
+
+.detail-heading {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.detail-heading-2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: 3rem;
+}
+
+.detail-paragraph {
+  margin-top: 3rem;
+  width: 80%;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.top-3-cars {
+  margin: 3rem 0;
+  background-color: #2bdb7a;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  min-width: 18rem;
+  display: block;
+  border: none;
+  border-radius: 2px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.top-3-cars:hover {
+  background-color: #34be72;
+}
+
 /* MEDIA QUERIES  */
+
+@media only screen and (max-width: 37.5em) {
+  .left-detail {
+    clip-path: none;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.5);
+  }
+}
+
+@media only screen and (max-width: 53.15em) {
+  .client-img {
+    width: 50%;
+    height: auto;
+  }
+  .client-car-container {
+    height: min-content;
+  }
+
+  .row-container {
+    flex-direction: column;
+  }
+}
 
 @media only screen and (max-width: 62.5em) {
   html {
     font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 68.75em) {
+  .popular-row-ct {
+    flex-direction: column;
+  }
+
+  .popular-car-ct {
+    margin-bottom: 3rem;
   }
 }
 
